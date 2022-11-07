@@ -1,25 +1,29 @@
-const Employee = require('../lib/employee');
-const employee = new Employee('Arinze', '1234567', 'metoama@gmail.com', '713');
+const Manager = require('../lib/manager');
+const manager = new Manager('Arinze', '1234567', 'metoama@gmail.com', '713');
 
-test('test contrsuctor values for employee', () => {
-    expect(employee.name).toBe('Arinze');
-    expect(employee.id).toBe('1234567');
-    expect(employee.email).toBe("metoama@gmail.com");
-    expect(employee.officeNumber).toBe("713");
+test('test contrsuctor values for manager', () => {
+    expect(manager.name).toBe('Arinze');
+    expect(manager.id).toBe('1234567');
+    expect(manager.email).toBe("metoama@gmail.com");
+    expect(manager.officeNumber).toBe("713");
 });
 
-test('test if we get the name from getName() method', () => {
-    expect(employee.getName()).toBe('Arinze');
+test('should return name from getName() method', () => {
+    expect(manager.getName()).toBe('Arinze');
 });
 
-test('test if getId() method will return id',  () => {
-    expect(employee.getId()).toBe('1234567');
+test('should return id from getId() method',  () => {
+    expect(manager.getId()).toBe('1234567');
 });
 
-test('test if getEmail() method will return email', () => {
-    expect(employee.getEmail()).toBe('metoama@gmail.com');
+test('should return email from getEmail() method', () => {
+    expect(manager.getEmail()).toBe('metoama@gmail.com');
 });
+
+test('should return office number from getofficeNumber()', () => {
+    expect(manager.getofficeNumber()).toBe("713")
+})
   
 test('test if getRole method will return role', () => {
-    expect(employee.getRole()).toBe('employee');
+    expect(manager.getRole()).toBe('Manager');
 });

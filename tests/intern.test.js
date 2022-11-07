@@ -20,5 +20,5 @@ test('test if getEmail() method will return email', () => {
 });
   
 test('test if getRole method will return role', () => {
-    expect(employee.getRole()).toBe('employee');
+    expect(employee.getRole()).toBe('Employee');
 });
