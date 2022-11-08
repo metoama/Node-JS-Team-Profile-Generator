@@ -35,20 +35,120 @@ const promptManger = () => {
             name: 'officeNumber',
             message: "What is the team manager's office number?"
         }
-    ]
+    ]).then(answers => {
+        console.log(answers);
+        const manager = new Manager(answers.name, answers.employeeId, answers.email, answers.officeNumber);
+        teamMembers.push(manager);
+        promptMenu();
+    })
+};
 
-    )
+const promptMenu = ()  => {
+    return inquirer.prompt ([
+        {
+            type: 'list',
+            name: 'menu',
+            message: 'Which type of team member would you like to add?',
+            choices: ["Engineer', 'Intern', 'I don't want to add any more team members"]
+        }
+  ])
+
+.then(userChoice => {
+    switch (userChoice.menu) {
+        case "Engineer":
+            promptEngineer();
+            break;
+        case "Intern":
+            promptIntern();
+            break
+        default:
+            createTeam();
+    }
+})};
+
+
+const promptEngineer = () => {
+    console.log('Provide information for Engineer');
+
+    return inquirer.prompt ([
+        {
+            type: 'input',
+            name: 'name',
+            message: "What is the Engineer's name?"
+        },
+        
+        {
+            tytype: 'input',
+            name: 'id',
+            message: "What is Engineer's id?"
+
+        },
+
+        {
+            type: 'input',
+            name: 'email',
+            message: "What is the Engineer's email"
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: "What is the Engineer's github username?"
+        },
+
+    ]).then(answers => {
+        console.log(answers);
+        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.GitHub);
+        teamMembers.push(engineer);
+        promptMenu();
+})};
+
+const promptIntern = () => {
+    console.log('Provide information for Intern');
+
+    return inquirer.prompt ([
+        {
+            type: 'input',
+            name: 'name',
+            message: "What is the Intern's name?"
+        },
+        
+        {
+            tytype: 'input',
+            name: 'id',
+            message: "What is Intern's id?"
+
+        },
+
+        {
+            type: 'input',
+            name: 'email',
+            message: "What is the Intern's email"
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "What school/university does the Intern attend?"
+        },
+
+    ]).then(answers => {
+        console.log(answers);
+        const intern = new Intern(answers.name, answers.employeeId, answers.email, answers.School);
+        teamMembers.push(intern);
+        promptMenu();
+})}; 
+
+const createTeam = () => {
+    console.log ("Team created!!!");
+
+    if(!fs.existsSync(dist_dir)) {
+        fs.mkdirSync(dist_dir)
+    }
+
+fs.writeFileSync(distPath, generateHTML(teamMembers), "utf-8");
 }
 
+promptManger();
 
 
-const questions = [];
-//array of questions 
 
-function writeToFile(fileName, data) {}
-//function to write HTML determine if this needs to be changed
 
-function init() {}
-
-init();
-//test if correct....
