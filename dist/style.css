@@ -1,0 +1,54 @@
+
+header {
+    color: white;
+    background-color: #636464;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    margin: 15px;
+    padding: 10px;
+}
+
+body {
+    background-color: #ced4da;
+
+}
+
+.border {
+    border: var(--bs-border-width) var(--bs-border-style) #1376d9!important;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
+    padding: 10px;
+}
+
+.card {
+    padding: 10px;
+    margin: 15px;
+    
+}
+
+.card-header {
+    color: white;
+    background-color: #1376d9;
+
+}
+
+.list-group {
+    color: black;
+
+}
+
+.list-group-item {
+    white-space: nowrap;
+    overflow: visible;
+
+}
+
+#email {
+    color: rgba(255, 0, 0, 0.584);
+}

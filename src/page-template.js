@@ -8,7 +8,7 @@ const generateTeam = (team) => {
     const generateManager = manager => {
         console.log(manager);
         let managerHtml = `
-        <div class="card" style="width 15rem;">
+        <div class="card shadow-lg p-3 mb-5 bg-body rounded" style="width 15rem;">
             <div class="card-header">
             ${manager.name} <br/>
             <i class="fas fa-mug-hot"></i>Manager</div>
@@ -23,7 +23,7 @@ const generateTeam = (team) => {
     const generateEngineer = engineer => {
         console.log(engineer);
         let engineerHtml = `
-        <div class="card" style="width 15rem;">
+        <div class="card shadow-lg p-3 mb-5 bg-body rounded" style="width 15rem;">
             <div class="card-header">
             ${engineer.name} <br/>
             <i class="fas fa-mug-hot"></i>Manager</div>
@@ -38,7 +38,7 @@ const generateTeam = (team) => {
 const generateIntern = intern => {
     console.log(intern);
     let internHtml = `
-    <div class="card" style="width 15rem;">
+    <div class="card shadow-lg p-3 mb-5 bg-body rounded" style="width 15rem;">
         <div class="card-header">
         ${intern.name} <br/>
         <i class="fas fa-mug-hot"></i>Manager</div>
@@ -78,7 +78,7 @@ module.exports = team => {
         <title>Team Profile Generator</title>
     </head>
     <body>
-        <header>
+        <header span class="border border-5"></span>
         <h1>The Team</h1>
         </header>
     
