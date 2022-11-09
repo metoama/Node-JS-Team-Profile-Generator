@@ -27,7 +27,7 @@ const promptManager = () => {
         {
             type: 'input',
             name: 'email',
-            message: "What is the team manager's email"
+            message: "What is the team manager's email?"
         },
         
         {
@@ -49,12 +49,10 @@ const promptMenu = ()  => {
             type: 'list',
             name: 'menu',
             message: 'Which type of team member would you like to add?',
-            choices: [" Engineer",
-                        " Intern",
-                        " I don't want to add any more team members"],
-            filter(value) {
-                return value
-            }
+            choices: ["Engineer",
+                        "Intern",
+                        "I don't want to add any more team members"]
+            
         }
   ])
 
@@ -102,7 +100,7 @@ const promptEngineer = () => {
 
     ]).then(answers => {
         console.log(answers);
-        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.GitHub);
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.GitHub);
         teamMembers.push(engineer);
         promptMenu();
 })};
@@ -137,7 +135,7 @@ const promptIntern = () => {
 
     ]).then(answers => {
         console.log(answers);
-        const intern = new Intern(answers.name, answers.employeeId, answers.email, answers.School);
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.School);
         teamMembers.push(intern);
         promptMenu();
 })}; 
