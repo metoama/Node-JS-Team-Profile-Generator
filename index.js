@@ -100,7 +100,7 @@ const promptEngineer = () => {
 
     ]).then(answers => {
         console.log(answers);
-        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.GitHub);
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
         teamMembers.push(engineer);
         promptMenu();
 })};
@@ -135,7 +135,7 @@ const promptIntern = () => {
 
     ]).then(answers => {
         console.log(answers);
-        const intern = new Intern(answers.name, answers.id, answers.email, answers.School);
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
         teamMembers.push(intern);
         promptMenu();
 })}; 
