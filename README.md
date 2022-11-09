@@ -9,3 +9,8 @@ Application can be run using command node index.js
 
 ## Demo 
 [demo video](./dist/Team%20Profile%20Generator.webm)
+
+Link to video:
+https://drive.google.com/file/d/1q5A8Ovzdd19a3wD5dN269dpluhS2AmOh/view
+
+! [Demo picture](./dist/demo%20screenshot.png)
