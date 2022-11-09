@@ -11,7 +11,7 @@ const generateTeam = (team) => {
         <div class="card" style="width 15rem;">
             <div class="card-header">
             ${manager.name} <br/>
-            <i class="fas fa-mug-hot></i>Manager</div>
+            <i class="fas fa-mug-hot"></i>Manager</div>
             <ul class="list-group list-group-flush">
             <li class="list-group-item">Id: ${manager.id}</li>
             <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.email}">${manager.email}</a></span></li>
@@ -26,7 +26,7 @@ const generateTeam = (team) => {
         <div class="card" style="width 15rem;">
             <div class="card-header">
             ${engineer.name} <br/>
-            <i class="fas fa-mug-hot></i>Manager</div>
+            <i class="fas fa-mug-hot"></i>Manager</div>
             <ul class="list-group list-group-flush">
             <li class="list-group-item">Id: ${engineer.id}</li>
             <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineer.email}">${engineer.email}</a></span></li>
@@ -41,11 +41,11 @@ const generateIntern = intern => {
     <div class="card" style="width 15rem;">
         <div class="card-header">
         ${intern.name} <br/>
-        <i class="fas fa-mug-hot></i>Manager</div>
+        <i class="fas fa-mug-hot"></i>Manager</div>
         <ul class="list-group list-group-flush">
         <li class="list-group-item">Id: ${intern.id}</li>
         <li class="list-group-item">Email: <span id="email"><a href="mailto:${intern.email}">${intern.email}</a></span></li>
-        <li class="list-group-item">School: ${intern.School}</li>
+        <li class="list-group-item">School: ${intern.school}</li>
         </ul>
     </div>`;
     html.push(internHtml)};

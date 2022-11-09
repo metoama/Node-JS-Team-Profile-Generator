@@ -5,11 +5,11 @@ const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const generateHTML = require('./src/page-template.js');
 const path = require("path");
-const dist_dir = path.resolve(__dirname, "output");
+const dist_dir = path.resolve(__dirname, "./dist");
 const distPath = path.join(dist_dir, "team.html");
 const teamMembers = [];
 
-const promptManger = () => {
+const promptManager = () => {
     return inquirer.prompt([
         {
             type: 'input',
@@ -37,7 +37,7 @@ const promptManger = () => {
         }
     ]).then(answers => {
         console.log(answers);
-        const manager = new Manager(answers.name, answers.employeeId, answers.email, answers.officeNumber);
+        const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
         teamMembers.push(manager);
         promptMenu();
     })
@@ -49,7 +49,12 @@ const promptMenu = ()  => {
             type: 'list',
             name: 'menu',
             message: 'Which type of team member would you like to add?',
-            choices: ["Engineer', 'Intern', 'I don't want to add any more team members"]
+            choices: [" Engineer",
+                        " Intern",
+                        " I don't want to add any more team members"],
+            filter(value) {
+                return value
+            }
         }
   ])
 
@@ -147,7 +152,7 @@ const createTeam = () => {
 fs.writeFileSync(distPath, generateHTML(teamMembers), "utf-8");
 }
 
-promptManger();
+promptManager();
 
 
 
